@@ -461,7 +461,14 @@ fi
 
 for mpit in "${abs_path}"/*.c; do
     out_name="$(basename "$mpit" .c)"
-    "${OMPI_HOME}/bin/mpicc" -o "${abs_path}/${out_name}" "$mpit"
+    case ${out_name} in
+    "env_mpi")
+      "${OMPI_HOME}/bin/mpicc" -o "${abs_path}/${out_name}" "$mpit"
+      ;;
+    "c11_test")
+      "${OMPI_HOME}/bin/oshcc" -o "${abs_path}/${out_name}" "$mpit"
+      ;;
+    esac
 done
 
 test_tune
