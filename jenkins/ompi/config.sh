@@ -9,7 +9,7 @@ ci_test_oshmem=${ci_test_oshmem:="yes"}
 ci_test_check=${ci_test_check:="yes"}
 ci_test_threads=${ci_test_threads:="no"}
 ci_test_use_ucx_branch=${ci_test_use_ucx_branch:="yes"}
-ci_test_ucx_branch=${ci_test_ucx_branch:="master"}
+ci_test_ucx_branch=${ci_test_ucx_branch:="v1.15.x"}
 ci_test_hcoll=${ci_test_hcoll:="yes"}
 
 # Ensure that we will cleanup all temp files

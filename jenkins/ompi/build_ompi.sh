@@ -4,6 +4,7 @@ then
     then
         fold "Building UCX"
         export ucx_root="$WORKSPACE/ucx_local"
+        [[ -d ${ucx_root} ]] && rm -rf ${ucx_root}
         git clone https://github.com/openucx/ucx -b ${ci_test_ucx_branch} "${ucx_root}"
         (cd "${ucx_root}";\
             ./autogen.sh;\
